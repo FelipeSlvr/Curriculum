@@ -9,7 +9,8 @@ import { CSSProperties } from "react";
 
 export const Dashboards = () => {
   // Helper to resolve assets correctly under GitHub Pages base (e.g., /Curriculum/)
-  const asset = (p: string) => new URL(p, import.meta.env.BASE_URL).toString();
+  // Simple join instead of URL() to avoid runtime errors when BASE_URL is a relative path.
+  const asset = (p: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${p}`;
   const style: CSSProperties = {
     fontFamily: "Mulish, sans-serif",
     fontOpticalSizing: "auto",

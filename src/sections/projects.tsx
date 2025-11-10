@@ -8,6 +8,8 @@ import Autoplay from "embla-carousel-autoplay"
 import { CSSProperties } from "react";
 
 export const Projects = () => {
+    // Resolve assets respecting Vite base (GitHub Pages subpath)
+    const asset = (p: string) => new URL(p, import.meta.env.BASE_URL).toString();
 
     const style : CSSProperties = {
     fontFamily: "Mulish, sans-serif",
@@ -36,21 +38,21 @@ export const Projects = () => {
                             <CarouselContent>
                                 <CarouselItem>
                                     <img
-                                        src="/projects/1.png"
+                                        src={asset("projects/1.png")}
                                         alt="Placeholder"
                                         className="w-full h-full object-cover"
                                     />
                                 </CarouselItem>
                                 <CarouselItem>
                                     <img
-                                        src="/projects/2.png"
+                                        src={asset("projects/2.png")}
                                         alt="Placeholder"
                                         className="w-full h-full object-cover"
                                     />
                                 </CarouselItem>
                                 <CarouselItem>
                                     <img
-                                        src="/projects/3.png"
+                                        src={asset("projects/3.png")}
                                         alt="Placeholder"
                                         className="w-full h-full object-cover"
                                     />
@@ -75,21 +77,21 @@ export const Projects = () => {
                             <CarouselContent>
                             <CarouselItem>
                                     <img
-                                        src="/projects/11.png"
+                                        src={asset("projects/11.png")}
                                         alt="Placeholder"
                                         className="w-full h-full object-cover"
                                     />
                                 </CarouselItem>
                                 <CarouselItem>
                                     <img
-                                        src="/projects/22.png"
+                                        src={asset("projects/22.png")}
                                         alt="Placeholder"
                                         className="w-full h-full object-cover"
                                     />
                                 </CarouselItem>
                                 <CarouselItem>
                                     <img
-                                        src="/projects/33.png"
+                                        src={asset("projects/33.png")}
                                         alt="Placeholder"
                                         className="w-full h-full object-cover"
                                     />

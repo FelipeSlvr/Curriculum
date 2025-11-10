@@ -8,6 +8,8 @@ import Autoplay from "embla-carousel-autoplay";
 import { CSSProperties } from "react";
 
 export const Dashboards = () => {
+  // Helper to resolve assets correctly under GitHub Pages base (e.g., /Curriculum/)
+  const asset = (p: string) => new URL(p, import.meta.env.BASE_URL).toString();
   const style: CSSProperties = {
     fontFamily: "Mulish, sans-serif",
     fontOpticalSizing: "auto",
@@ -87,13 +89,13 @@ export const Dashboards = () => {
         <Box
           title="Key Performance Indicators"
           description="Using Power Query for data ingestion, DAX for dynamic measures, and custom visuals for KPI tracking, I built two core modules—Maintenance Indicators and Supplies Indicators—to give Engineering, Operations and Finance teams real-time visibility into cost drivers. Users can slice by year/month, drill into personnel, overhead and inventory expense details, and compare actuals against targets at a glance."
-          images={["/bis/1.png", "/bis/2.png"]}
+          images={[asset("bis/1.png"), asset("bis/2.png")]}
         />
 
         <Box
           title="Workforce Cost"
           description="As part of our ongoing Power BI modernization, I built a dedicated “Maintenance – Personnel” page that lets Operations and Finance drill into every element of headcount cost. To complement the raw numbers, I then designed a Deviation Analysis page where actual monthly and cumulative personnel spend are plotted against dynamic target lines."
-          images={["/bis/11.png", "/bis/22.png"]}
+          images={[asset("bis/11.png"), asset("bis/22.png")]}
         />
       </div>
     </>

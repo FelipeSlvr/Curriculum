@@ -5,7 +5,8 @@ import { defineConfig } from "vite"
 export default defineConfig({
   plugins: [react()],
   // Project site on GitHub Pages: felipeslvr.github.io/curriculum
-  base: "/curriculum/",
+  // IMPORTANT: Path is case-sensitive on GitHub Pages; match your repo name exactly.
+  base: "/Curriculum/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

@@ -11,7 +11,6 @@ Currently, two official plugins are available:
 
 If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
 ```js
 export default tseslint.config({
@@ -24,6 +23,25 @@ export default tseslint.config({
   },
 })
 ```
+
+## Deploying to GitHub Pages
+
+This project is preconfigured to deploy with GitHub Pages using GitHub Actions.
+
+Steps:
+
+1. Push the repo to GitHub (make sure your default branch is `main` or `master`).
+2. In GitHub, go to Settings → Pages, and set Source to "GitHub Actions".
+3. Push a commit to trigger the `Deploy Vite site to GitHub Pages` workflow.
+4. Your site will be available at:
+   - https://<USERNAME>.github.io/ for a repo named `<USERNAME>.github.io`, or
+   - https://<USERNAME>.github.io/<REPO>/ for a normal project repo.
+
+Notes:
+
+- The Vite `base` is set dynamically in `vite.config.ts` to work for both root pages and project pages.
+- The workflow files are under `.github/workflows/deploy.yml` and publish the `dist` folder.
+- No `homepage` field is required in `package.json` for this setup.
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
 - Optionally add `...tseslint.configs.stylisticTypeChecked`

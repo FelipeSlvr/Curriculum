@@ -1,0 +1,76 @@
+{
+  "navbar": {
+    "about": "About",
+    "caseStudies": "Case Studies",
+    "projects": "Projects",
+    "dashboards": "BI Dashboards",
+    "resume": "Resume",
+    "downloadEN": "Download (EN)",
+    "downloadPT": "Download (PT)",
+    "hireMe": "Hire me",
+    "language": "Language",
+    "english": "English",
+    "portuguese": "Portuguese"
+  },
+  "about": {
+    "name": "Felipe Silveira",
+    "title": "Full‑Stack Developer • Data‑Driven Builder",
+    "summary": "I craft reliable web apps with React, TypeScript, and Node, and turn product and business questions into data‑backed decisions.",
+    "bullets": [
+      "Strong in React + TS, API integration, and clean UI/UX",
+      "Hands‑on with SQL and Power BI for insights and dashboards",
+      "Collaborative, pragmatic, and fast to learn new domains"
+    ],
+    "ctaHire": "Hire me",
+    "ctaResume": "View resume"
+  },
+  "sections": {
+    "skills": "Skills",
+    "experiences": "Experience",
+    "education": "Education",
+    "caseStudies": "Case studies",
+    "contact": "Contact"
+  },
+  "experiences": {
+    "role": "Full-Stack Developer",
+    "dates": "2022 — Present",
+    "description": "I'm the main developer responsible for maintaining the company's ERP by developing new modules using React and fixing backend errors on their APIs."
+  },
+  "education": {
+    "dsDegree": "Graduate Degree in Data Science",
+    "dsUniversity": "La Salle University",
+    "dsDates": "Starting 2026/1",
+    "itDegree": "Associate Degree in IT Management",
+    "itUniversity": "UNINTER University",
+    "itDates": "2020 — 2022"
+  },
+  "projects": {
+    "items": {
+      "sistaq": {
+        "description": "Modernized an ERP interface with React + TypeScript, improving usability, navigation, and data entry workflows. Delivered clean UI patterns, better form validation, and faster tables with filtering and sorting."
+      },
+      "cosmonaut": {
+        "description": "Built an e‑commerce prototype with product catalog, cart flows, and webhook-based integrations. Focused on component reuse, accessibility, and a smooth browsing experience."
+      }
+    }
+  },
+  "dashboards": {
+    "items": {
+      "kpi": {
+        "title": "Key Performance Indicators",
+        "description": "Using Power Query for data ingestion, DAX for measures, and custom visuals for KPI tracking, I built Maintenance and Supplies modules to give Engineering, Operations, and Finance real-time visibility into cost drivers. Users slice by period, drill into personnel, overhead, and inventory, and compare actuals vs targets at a glance."
+      },
+      "workforce": {
+        "title": "Workforce Cost",
+        "description": "Created a dedicated Maintenance – Personnel page to drill into every element of headcount cost. Added a Deviation Analysis view where actual monthly and cumulative personnel spend are plotted against dynamic target lines for quick variance diagnosis."
+      }
+    }
+  },
+  "contact": {
+    "schedule": "Or schedule a 15‑min call"
+  },
+  "footer": {
+    "builtWith": "This Website was developed using",
+    "rights": "All rights reserved"
+  }
+}

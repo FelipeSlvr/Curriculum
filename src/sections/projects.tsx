@@ -1,13 +1,15 @@
 import { Separator } from "@/components/ui/separator";
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-  } from "@/components/ui/carousel"
+        Carousel,
+        CarouselContent,
+        CarouselItem,
+    } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-import { CSSProperties } from "react";
+import { CSSProperties, useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 export const Projects = () => {
+    const { t } = useTranslation();
     // Resolve assets respecting Vite base (GitHub Pages subpath)
     // Simple join instead of URL() to avoid runtime errors when BASE_URL is a relative path.
     const asset = (p: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${p}`;
@@ -19,88 +21,85 @@ export const Projects = () => {
     fontStyle: "normal",
     };
 
+    type Project = {
+        title: string;
+        description: string;
+        tags: string[];
+        images: { src: string; alt: string }[];
+    };
+
+    const allProjects: Project[] = [
+        {
+            title: "SISTAQ",
+            description: t('projects.items.sistaq.description'),
+            tags: ["React", "TypeScript", "ERP", "UI/UX"],
+            images: [
+                { src: "projects/1.png", alt: "SISTAQ ERP modern UI - dashboard view" },
+                { src: "projects/2.png", alt: "SISTAQ ERP forms and data entry" },
+                { src: "projects/3.png", alt: "SISTAQ ERP tables and filtering" },
+            ],
+        },
+        {
+            title: "Cosmonaut Emporium",
+            description: t('projects.items.cosmonaut.description'),
+            tags: ["React", "E‑commerce", "Webhook", "UI/UX"],
+            images: [
+                { src: "projects/11.png", alt: "Cosmonaut Emporium home page" },
+                { src: "projects/22.png", alt: "Cosmonaut Emporium product listing" },
+                { src: "projects/33.png", alt: "Cosmonaut Emporium product detail" },
+            ],
+        },
+    ];
+
+    const s = new Set<string>();
+    allProjects.forEach(p => p.tags.forEach(t => s.add(t)));
+
+    const [activeTag] = useState<string>("All");
+    const filtered = activeTag === "All"
+        ? allProjects
+        : allProjects.filter(p => p.tags.includes(activeTag));
+
     return (
         <>
-            <h1 className="text-2xl font-bold text-center pt-5 text-white">Software Projects</h1>
-            <div className="py-10 max-w-[880px] px-5 mx-auto flex flex-col md:flex-row gap-6 justify-center items-stretch">
-                <div className="box-border border-zinc-800 border w-full max-w-[800px] p-4 gap-4 flex flex-col">
-                    <div  className="flex flex-col gap-2 md:flex-1">
-                        <h1 className="text-2xl font-bold text-center text-white">SISTAQ</h1>
-                        <Separator className="bg-zinc-800"/>
-                        <p className="text-lg text-left leading-relaxed text-white" style={style}>As part of one of my long-term projects with React and TypeScript, I worked on this project where I had to update the old ERP of the company using a number of modern libraries and tools. This project envisions mostly improving the interface which will be used by the Engineering and Sales Department. The new version of the website also allows the users to fill in and change production data in the internal database of the company. </p>
+            <h1 className="text-2xl font-bold text-center pt-5 text-white">{t('sections.caseStudies')}</h1>
+
+            <div className="py-8 max-w-[980px] px-5 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                {filtered.map((p) => (
+                    <div key={p.title} className="box-border border-zinc-800 border w-full p-4 gap-4 flex flex-col">
+                        <div className="flex flex-col gap-2 md:flex-1">
+                            <h2 className="text-2xl font-bold text-center text-white">{p.title}</h2>
+                            <div className="flex flex-wrap gap-2 justify-center">
+                                {p.tags.map(tag => (
+                                    <span key={tag} className="text-xs px-2 py-1 border border-zinc-700 rounded-full text-white/90">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                            <Separator className="bg-zinc-800"/>
+                            <p className="text-lg text-left leading-relaxed text-white" style={style}>{p.description}</p>
+                        </div>
+                        <div className="flex justify-end mt-auto">
+                            <Carousel
+                                plugins={[
+                                    Autoplay({ delay: 2000 }),
+                                ]}
+                            >
+                                <CarouselContent>
+                                    {p.images.map((img) => (
+                                        <CarouselItem key={img.src}>
+                                            <img
+                                                src={asset(img.src)}
+                                                alt={img.alt}
+                                                loading="lazy"
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                            </Carousel>
+                        </div>
                     </div>
-                    <div className="flex justify-end mt-auto">
-                        <Carousel
-                              plugins={[
-                                Autoplay({
-                                  delay: 2000,
-                                }),
-                              ]}>
-                            <CarouselContent>
-                                <CarouselItem>
-                                    <img
-                                        src={asset("projects/1.png")}
-                                        alt="Placeholder"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </CarouselItem>
-                                <CarouselItem>
-                                    <img
-                                        src={asset("projects/2.png")}
-                                        alt="Placeholder"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </CarouselItem>
-                                <CarouselItem>
-                                    <img
-                                        src={asset("projects/3.png")}
-                                        alt="Placeholder"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </CarouselItem>
-                            </CarouselContent>
-                        </Carousel>
-                    </div>
-                </div>
-                <div className="box-border border-zinc-800 border w-full max-w-[800px] p-4 gap-4 flex flex-col">
-                    <div className="flex flex-col gap-2 md:flex-1">
-                        <h1 className="text-2xl font-bold text-center text-white">Cosmonaut Emporium</h1>
-                        <Separator className="bg-zinc-800"/>
-                        <p className="text-lg text-left leading-relaxed text-white" style={style}>The website was created and maintained with the intention that it helps the Star Citizen community purchase in game items off the game without much hustle. The purpose of the platform is to improve user enjoyment by providing them with a smooth intuitive interface from which they can search and buy what they want in readiness for their quests within the game.</p>
-                    </div>
-                    <div className="flex justify-end mt-auto">
-                        <Carousel
-                              plugins={[
-                                Autoplay({
-                                  delay: 2000,
-                                }),
-                              ]}>
-                            <CarouselContent>
-                            <CarouselItem>
-                                    <img
-                                        src={asset("projects/11.png")}
-                                        alt="Placeholder"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </CarouselItem>
-                                <CarouselItem>
-                                    <img
-                                        src={asset("projects/22.png")}
-                                        alt="Placeholder"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </CarouselItem>
-                                <CarouselItem>
-                                    <img
-                                        src={asset("projects/33.png")}
-                                        alt="Placeholder"
-                                        className="w-full h-full object-cover"
-                                    />
-                                </CarouselItem>
-                            </CarouselContent>
-                        </Carousel>
-                    </div>
-                </div>
+                ))}
             </div>
         </>
     );

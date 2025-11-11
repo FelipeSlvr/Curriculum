@@ -6,8 +6,10 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { CSSProperties } from "react";
+import { useTranslation } from 'react-i18next';
 
 export const Dashboards = () => {
+  const { t } = useTranslation();
   // Helper to resolve assets correctly under GitHub Pages base (e.g., /Curriculum/)
   // Simple join instead of URL() to avoid runtime errors when BASE_URL is a relative path.
   const asset = (p: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${p}`;
@@ -19,17 +21,9 @@ export const Dashboards = () => {
   };
 
   /** Caixa reutilizável (titulo + desc à esquerda, carrossel à direita) */
-  const Box = ({
-    title,
-    description,
-    images,
-  }: {
-    title: string;
-    description: string;
-    images: string[];
-  }) => (
+  const Box = ({ id, titleKey, descriptionKey, images }: { id?: string; titleKey: string; descriptionKey: string; images: string[] }) => (
     <div
-      id="dashboards"
+      id={id}
       className="
         box-border
         w-full
@@ -41,14 +35,14 @@ export const Dashboards = () => {
       {/* BLOCO ESQUERDO – Título + Descrição */}
       <div className="flex flex-col gap-2 md:flex-1">
         <h2 className="text-2xl font-bold text-center md:text-left text-white">
-          {title}
+          {t(titleKey)}
         </h2>
         <Separator className="bg-zinc-800" />
         <p
           className="text-lg text-left leading-relaxed text-white"
           style={style}
         >
-          {description}
+          {t(descriptionKey)}
         </p>
       </div>
 
@@ -80,7 +74,7 @@ export const Dashboards = () => {
   return (
     <>
       <h1 className="text-2xl font-bold text-center pt-5 text-white">
-        BI Dashboards
+        {t('navbar.dashboards')}
       </h1>
 
       {/* CONTÊINER PRINCIPAL:
@@ -88,14 +82,14 @@ export const Dashboards = () => {
           Gap garante espaçamento entre as caixas. */}
       <div className="py-10 max-w-[880px] px-5 mx-auto flex flex-col gap-6">
         <Box
-          title="Key Performance Indicators"
-          description="Using Power Query for data ingestion, DAX for dynamic measures, and custom visuals for KPI tracking, I built two core modules—Maintenance Indicators and Supplies Indicators—to give Engineering, Operations and Finance teams real-time visibility into cost drivers. Users can slice by year/month, drill into personnel, overhead and inventory expense details, and compare actuals against targets at a glance."
+          id="dashboards"
+          titleKey="dashboards.items.kpi.title"
+          descriptionKey="dashboards.items.kpi.description"
           images={[asset("bis/1.png"), asset("bis/2.png")]}
         />
-
         <Box
-          title="Workforce Cost"
-          description="As part of our ongoing Power BI modernization, I built a dedicated “Maintenance – Personnel” page that lets Operations and Finance drill into every element of headcount cost. To complement the raw numbers, I then designed a Deviation Analysis page where actual monthly and cumulative personnel spend are plotted against dynamic target lines."
+          titleKey="dashboards.items.workforce.title"
+          descriptionKey="dashboards.items.workforce.description"
           images={[asset("bis/11.png"), asset("bis/22.png")]}
         />
       </div>

@@ -1,0 +1,80 @@
+{
+  "navbar": {
+    "about": "Sobre",
+    "caseStudies": "Cases",
+    "projects": "Projetos",
+    "dashboards": "BI Dashboards",
+    "resume": "Currículo",
+    "downloadEN": "Baixar (EN)",
+    "downloadPT": "Baixar (PT)",
+    "hireMe": "Contrate-me",
+    "language": "Idioma",
+    "english": "Inglês",
+    "portuguese": "Português"
+  },
+  "about": {
+    "name": "Felipe Silveira",
+    "title": "Desenvolvedor Full‑Stack • Orientado a Dados",
+    "summary": "Crio aplicações web confiáveis com React, TypeScript e Node, e transformo questões de produto e negócio em decisões orientadas por dados.",
+    "bullets": [
+      "Forte em React + TS, integração de APIs e UI/UX limpa",
+      "Prático com SQL e Power BI para insights e dashboards",
+      "Colaborativo, pragmático e rápido para aprender novos domínios"
+    ],
+    "ctaHire": "Contrate-me",
+    "ctaResume": "Ver currículo"
+  },
+  "sections": {
+    "skills": "Habilidades",
+    "experiences": "Experiência",
+    "education": "Educação",
+    "caseStudies": "Cases",
+    "contact": "Contato"
+  },
+  "experiences": {
+    "role": "Desenvolvedor Full-Stack • Champion de Power BI",
+    "dates": "2022 — Atual",
+    "bullets": [
+      "Entreguei features responsivas em React + TypeScript com componentes reutilizáveis.",
+      "Integrei APIs REST, otimizei busca de dados e melhorei o tratamento de erros.",
+      "Projetei e implementei dashboards no Power BI para KPIs, custo de pessoal e análise de desvios.",
+      "Colaborei com Operações e Financeiro para definir métricas, validar dados e iterar rapidamente.",
+      "Elevei a qualidade do código com revisões, linting e refatorações voltadas a performance."
+    ]
+  },
+  "education": {
+    "dsDegree": "Bacharelado em Ciência de Dados — Universidade La Salle",
+    "dsDates": "Início em 2026/1",
+    "itDegree": "Tecnologia em Gestão da TI — UNINTER",
+    "itDates": "2020 — 2022"
+  },
+  "projects": {
+    "items": {
+      "sistaq": {
+        "description": "Modernizei a interface de um ERP com React + TypeScript, melhorando usabilidade, navegação e fluxo de cadastro. Entreguei padrões de UI consistentes, validações mais robustas e tabelas mais rápidas com filtros e ordenação."
+      },
+      "cosmonaut": {
+        "description": "Criei um protótipo de e‑commerce com catálogo, carrinho e integrações via webhook. Foquei em reutilização de componentes, acessibilidade e navegação fluida."
+      }
+    }
+  },
+  "dashboards": {
+    "items": {
+      "kpi": {
+        "title": "Indicadores‑Chave de Desempenho",
+        "description": "Com Power Query para ingestão de dados, DAX para medidas e visuais customizados para acompanhamento de KPIs, construí módulos de Manutenção e Suprimentos que dão a Engenharia, Operações e Financeiro visibilidade em tempo real dos direcionadores de custo. Usuários fatiam por período, detalham pessoal, despesas e estoque, e comparam realizado vs meta rapidamente."
+      },
+      "workforce": {
+        "title": "Custo de Pessoal",
+        "description": "Desenvolvi uma página dedicada a Manutenção – Pessoal para análise detalhada de cada elemento do custo de headcount. Incluí uma visão de Análise de Desvios, comparando gastos mensais e acumulados com linhas de meta dinâmicas para diagnóstico rápido."
+      }
+    }
+  },
+  "contact": {
+    "schedule": "Ou agende uma chamada de 15 min"
+  },
+  "footer": {
+    "builtWith": "Este site foi desenvolvido usando",
+    "rights": "Todos os direitos reservados"
+  }
+}

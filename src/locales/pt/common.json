@@ -32,20 +32,17 @@
     "contact": "Contato"
   },
   "experiences": {
-    "role": "Desenvolvedor Full-Stack • Champion de Power BI",
+    "role": "Desenvolvedor Full-Stack",
     "dates": "2022 — Atual",
-    "bullets": [
-      "Entreguei features responsivas em React + TypeScript com componentes reutilizáveis.",
-      "Integrei APIs REST, otimizei busca de dados e melhorei o tratamento de erros.",
-      "Projetei e implementei dashboards no Power BI para KPIs, custo de pessoal e análise de desvios.",
-      "Colaborei com Operações e Financeiro para definir métricas, validar dados e iterar rapidamente.",
-      "Elevei a qualidade do código com revisões, linting e refatorações voltadas a performance."
-    ]
+    "description": 
+      "Sou o desenvolvedor principal responsável pela manutenção do ERP da empresa, desenvolvendo novos módulos com React e corrigindo erros de backend em suas APIs."
   },
   "education": {
-    "dsDegree": "Bacharelado em Ciência de Dados — Universidade La Salle",
+    "dsDegree": "Pós-graduação em Ciência de Dados",
+    "dsUniversity": "Universidade La Salle",
     "dsDates": "Início em 2026/1",
-    "itDegree": "Tecnologia em Gestão da TI — UNINTER",
+    "itDegree": "Tecnologia em Gestão da TI",
+    "itUniversity": "Universidade UNINTER",
     "itDates": "2020 — 2022"
   },
   "projects": {

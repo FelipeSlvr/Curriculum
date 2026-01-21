@@ -15,7 +15,7 @@
   "about": {
     "name": "Felipe Silveira",
     "title": "Full‑Stack Developer • Data‑Driven Builder",
-    "summary": "I craft reliable web apps with React, TypeScript, and Node, and turn product and business questions into data‑backed decisions.",
+    "summary": "I craft reliable web apps with React, TypeScript, Node, and turn product and business questions into data‑backed decisions.",
     "bullets": [
       "Strong in React + TS, API integration, and clean UI/UX",
       "Hands‑on with SQL and Power BI for insights and dashboards",
@@ -34,7 +34,7 @@
   "experiences": {
     "role": "Full-Stack Developer",
     "dates": "2022 — Present",
-    "description": "I'm the main developer responsible for maintaining the company's ERP by developing new modules using React and fixing backend errors on their APIs."
+    "description": "I'm the developer responsible for maintaining and keeping the company's ERP by developing new modules using React and fixing backend errors on their APIs."
   },
   "education": {
     "dsDegree": "Graduate Degree in Data Science",

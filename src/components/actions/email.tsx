@@ -9,7 +9,7 @@ const Email = () => {
     <EnvelopeFill
       size={35}
       onClick={handleClick}
-      style={{ cursor: 'pointer', color: 'white'}}
+      className="cursor-pointer text-foreground"
     />
   );
 };

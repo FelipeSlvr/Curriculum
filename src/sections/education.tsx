@@ -1,27 +1,28 @@
 import { Separator } from "@/components/ui/separator";
-import { CSSProperties } from "react";
 import { useTranslation } from 'react-i18next';
 
 export const Education = () => {
     const { t } = useTranslation();
 
-    const style : CSSProperties = {
-    fontFamily: "Mulish, sans-serif",
-    fontOpticalSizing: "auto",
-    fontWeight: "normal",
-    fontStyle: "normal",
-    };
+    const dsDates = t('education.dsDates').replace(/\s*-\s*/g, " \u2013 ");
+    const itDates = t('education.itDates').replace(/\s*-\s*/g, " \u2013 ");
 
     return (
         <>
-                <div className="box-border border-zinc-800 border w-full max-w-[800px] p-4 gap-4 flex flex-col">
+                <div className="terminal-panel box-border w-full md:flex-1 md:basis-0 min-w-0 p-4 gap-4 flex flex-col">
                         <div className="flex flex-col items-center mt-4 gap-6 md:mt-0">
-                            <h1 className="text-2xl font-bold text-center text-white">{t('sections.education')}</h1>
-                            <h2 className="text-lg text-center text-white" style={style}>{t('education.dsDegree')}</h2>
-                            <p className="text-sm text-white/70" style={style}>{t('education.dsUniversity')} • {t('education.dsDates')}</p>
-                            <Separator className="bg-zinc-800"/>
-                                    <h2 className="text-lg text-center text-white" style={style}>{t('education.itDegree')}</h2>
-                                    <p className="text-sm text-white/70" style={style}>{t('education.itUniversity')} • {t('education.itDates')}</p>
+                <h1 className="text-2xl font-bold text-center text-foreground terminal-heading">{t('sections.education')}</h1>
+                <h2 className="text-lg text-center text-foreground">{t('education.dsDegree')}</h2>
+                            <p className="text-sm text-foreground/70">
+                                <span>{t('education.dsUniversity')} • </span>
+                                <span className="whitespace-nowrap">{dsDates}</span>
+                            </p>
+                <Separator className="bg-border/60" />
+                    <h2 className="text-lg text-center text-foreground">{t('education.itDegree')}</h2>
+                                    <p className="text-sm text-foreground/70">
+                                        <span>{t('education.itUniversity')} • </span>
+                                        <span className="whitespace-nowrap">{itDates}</span>
+                                    </p>
                         </div>
                 </div>
         </>

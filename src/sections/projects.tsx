@@ -5,7 +5,7 @@ import {
         CarouselItem,
     } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-import { CSSProperties, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
 export const Projects = () => {
@@ -13,13 +13,6 @@ export const Projects = () => {
     // Resolve assets respecting Vite base (GitHub Pages subpath)
     // Simple join instead of URL() to avoid runtime errors when BASE_URL is a relative path.
     const asset = (p: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${p}`;
-
-    const style : CSSProperties = {
-    fontFamily: "Mulish, sans-serif",
-    fontOpticalSizing: "auto",
-    fontWeight: "normal",
-    fontStyle: "normal",
-    };
 
     type Project = {
         title: string;
@@ -61,22 +54,22 @@ export const Projects = () => {
 
     return (
         <>
-            <h1 className="text-2xl font-bold text-center pt-5 text-white">{t('sections.caseStudies')}</h1>
+            <h1 className="text-2xl font-bold text-center pt-5 text-foreground terminal-heading">{t('sections.caseStudies')}</h1>
 
             <div className="py-8 max-w-[980px] px-5 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                 {filtered.map((p) => (
-                    <div key={p.title} className="box-border border-zinc-800 border w-full p-4 gap-4 flex flex-col">
+                    <div key={p.title} className="terminal-panel box-border w-full p-4 gap-4 flex flex-col">
                         <div className="flex flex-col gap-2 md:flex-1">
-                            <h2 className="text-2xl font-bold text-center text-white">{p.title}</h2>
+                            <h2 className="text-2xl font-bold text-center text-foreground">{p.title}</h2>
                             <div className="flex flex-wrap gap-2 justify-center">
                                 {p.tags.map(tag => (
-                                    <span key={tag} className="text-xs px-2 py-1 border border-zinc-700 rounded-full text-white/90">
+                                    <span key={tag} className="text-xs px-2 py-1 border border-border/60 rounded-full text-foreground/90">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
-                            <Separator className="bg-zinc-800"/>
-                            <p className="text-lg text-left leading-relaxed text-white" style={style}>{p.description}</p>
+                            <Separator className="bg-border/60" />
+                            <p className="text-lg text-left leading-relaxed text-foreground">{p.description}</p>
                         </div>
                         <div className="flex justify-end mt-auto">
                             <Carousel
@@ -91,7 +84,7 @@ export const Projects = () => {
                                                 src={asset(img.src)}
                                                 alt={img.alt}
                                                 loading="lazy"
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-cover rounded"
                                             />
                                         </CarouselItem>
                                     ))}

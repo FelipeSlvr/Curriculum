@@ -5,7 +5,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { CSSProperties } from "react";
 import { useTranslation } from 'react-i18next';
 
 export const Dashboards = () => {
@@ -13,34 +12,27 @@ export const Dashboards = () => {
   // Helper to resolve assets correctly under GitHub Pages base (e.g., /Curriculum/)
   // Simple join instead of URL() to avoid runtime errors when BASE_URL is a relative path.
   const asset = (p: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${p}`;
-  const style: CSSProperties = {
-    fontFamily: "Mulish, sans-serif",
-    fontOpticalSizing: "auto",
-    fontWeight: "normal",
-    fontStyle: "normal",
-  };
 
   /** Caixa reutilizável (titulo + desc à esquerda, carrossel à direita) */
   const Box = ({ id, titleKey, descriptionKey, images }: { id?: string; titleKey: string; descriptionKey: string; images: string[] }) => (
     <div
       id={id}
       className="
+        terminal-panel
         box-border
         w-full
-        border border-zinc-800 
         p-4 gap-4
         flex flex-col md:flex-row md:items-start
       "
     >
       {/* BLOCO ESQUERDO – Título + Descrição */}
       <div className="flex flex-col gap-2 md:flex-1">
-        <h2 className="text-2xl font-bold text-center md:text-left text-white">
+        <h2 className="text-2xl font-bold text-center md:text-left text-foreground">
           {t(titleKey)}
         </h2>
-        <Separator className="bg-zinc-800" />
+        <Separator className="bg-border/60" />
         <p
-          className="text-lg text-left leading-relaxed text-white"
-          style={style}
+          className="text-lg text-left leading-relaxed text-foreground"
         >
           {t(descriptionKey)}
         </p>
@@ -73,7 +65,7 @@ export const Dashboards = () => {
 
   return (
     <>
-      <h1 className="text-2xl font-bold text-center pt-5 text-white">
+      <h1 className="text-2xl font-bold text-center pt-5 text-foreground terminal-heading">
         {t('navbar.dashboards')}
       </h1>
 

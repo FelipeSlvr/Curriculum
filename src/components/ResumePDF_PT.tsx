@@ -58,7 +58,7 @@ export const ResumePDF_PT: React.FC<{ updated?: string }> = ({ updated = "Nov 20
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Habilidades</Text>
         <View style={styles.tagRow}>
-          {["React","TypeScript","Node.js","Express","SQL","Power BI","Git","APIs REST","UI/UX","Agile"].map(t => (
+          {["React","TypeScript","Node.js","Express","SQL","Power BI","Google Cloud APIs","n8n","Git","APIs REST","UI/UX","Agile"].map(t => (
             <Text key={t} style={styles.tag}>{t}</Text>
           ))}
         </View>
@@ -69,15 +69,33 @@ export const ResumePDF_PT: React.FC<{ updated?: string }> = ({ updated = "Nov 20
         <Text style={styles.sectionTitle}>Experiência</Text>
         <View>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: 8 }}>
-            <Text>Desenvolvedor de Software — Estaq</Text>
-            <Text style={styles.small}>2021 – Presente</Text>
+            <Text style={{ fontWeight: 700 }}>Desenvolvedor Full‑Stack — Estaq Ltda.</Text>
+            <Text style={styles.small}>2022 – Presente</Text>
           </View>
           <View style={{ marginTop: 4 }}>
             {[
-              'Modernizei módulos legados do ERP com React + TypeScript, melhorando clareza e reduzindo fricção de navegação.',
-              'Integrei APIs internas para permitir entrada e atualização direta de dados de produção.',
-              'Diagnostiquei e corrigi problemas de backend que afetavam integridade e disponibilidade dos dados.',
-              'Colaborei com gestores para refinar fluxos de UI/UX e otimizar processos.',
+              'Desenvolvedor principal do ERP da empresa, entregando novos módulos em React + TypeScript para todas as áreas de negócio.',
+              'Projeto e manutenção de APIs REST em Node.js / Express utilizadas nas operações diárias de múltiplos departamentos.',
+              'Construção de automações de processos (n8n, Google Cloud APIs) para Engenharia, Operações, RH e Financeiro.',
+              'Responsável pelos dashboards em Power BI que dão visibilidade em tempo real de custos, KPIs e dados de equipe.',
+            ].map((b, i) => (
+              <View key={i} style={styles.bullet}>
+                <Text style={styles.bulletDot}>•</Text>
+                <Text style={styles.bulletText}>{b}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+        <View style={{ marginTop: 6 }}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: 8 }}>
+            <Text style={{ fontWeight: 700 }}>Desenvolvedor Júnior — Estaq Ltda.</Text>
+            <Text style={styles.small}>2020 – 2022</Text>
+          </View>
+          <View style={{ marginTop: 4 }}>
+            {[
+              'Customizei e expandi o sistema ERP legado para atender às necessidades de negócio em evolução.',
+              'Melhorei e mantive APIs REST internas, aumentando confiabilidade e reduzindo erros de resposta.',
+              'Diagnostiquei e resolvi bugs em toda a base de código, assumindo progressivamente issues mais complexas.',
             ].map((b, i) => (
               <View key={i} style={styles.bullet}>
                 <Text style={styles.bulletDot}>•</Text>

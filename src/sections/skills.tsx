@@ -1,40 +1,43 @@
-import { Separator } from "@/components/ui/separator";
 import { useTranslation } from 'react-i18next';
+
+const categories = [
+    {
+        label: "Frontend",
+        items: ["React", "TypeScript", "HTML / CSS", "Tailwind CSS"],
+    },
+    {
+        label: "Backend & Data",
+        items: ["Node.js", "Express", "SQL", "Power BI", "Google Cloud APIs"],
+    },
+    {
+        label: "Tools & Practices",
+        items: ["Git", "REST APIs", "n8n", "Agile / Scrum", "English C1"],
+    },
+];
 
 export const Skills = () => {
     const { t } = useTranslation();
 
-    const Separated = ({ items }: { items: string[] }) => (
-        <div className="flex flex-wrap justify-center leading-relaxed">
-            {items.map((item, idx) => (
-                <span key={item} className="whitespace-nowrap">
-                    {item}
-                    {idx < items.length - 1 ? (
-                        <span className="mx-2 text-muted-foreground">-</span>
-                    ) : null}
-                </span>
-            ))}
-        </div>
-    );
-
     return (
-        <>
-                <div className="terminal-panel box-border w-full md:flex-1 md:basis-0 min-w-0 p-4 gap-4 flex flex-col">
-                        <div className="flex flex-col items-center mt-4 gap-6 md:mt-0">
-                            <h1 className="text-2xl font-bold text-center text-foreground terminal-heading">{t('sections.skills')}</h1>
-                            <h2 className="text-lg text-center text-foreground">
-                                <Separated items={["React", "TS", "SQL", "Node", "Express", "Git"]} />
-                            </h2>
-                            <Separator className="bg-border/60" />
-                            <h2 className="text-lg text-center text-foreground">
-                                <Separated items={["Power BI", "English C1", "Agile Methods"]} />
-                            </h2>
-                            <Separator className="bg-border/60" />
-                            <h2 className="text-lg text-center text-foreground">
-                                <Separated items={["Teamworker", "Proactive", "Quick to Learn"]} />
-                            </h2>
+        <div className="terminal-panel p-6 flex flex-col gap-4">
+            <p className="text-xs text-muted-foreground uppercase tracking-widest">{t('sections.skills')}</p>
+            <div className="flex flex-col gap-4">
+                {categories.map((cat) => (
+                    <div key={cat.label} className="flex flex-col gap-2">
+                        <p className="text-xs text-primary/80 uppercase tracking-wider">{cat.label}</p>
+                        <div className="flex flex-wrap gap-2">
+                            {cat.items.map(item => (
+                                <span
+                                    key={item}
+                                    className="text-sm px-2 py-0.5 border border-primary/30 rounded-sm bg-primary/5 text-foreground whitespace-nowrap"
+                                >
+                                    {item}
+                                </span>
+                            ))}
                         </div>
-                </div>
-        </>
+                    </div>
+                ))}
+            </div>
+        </div>
     );
 }

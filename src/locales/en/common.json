@@ -14,7 +14,7 @@
   },
   "about": {
     "name": "Felipe Silveira",
-    "title": "Full‑Stack Developer • Data‑Driven Builder",
+    "title": "Full‑Stack Developer • Data‑Driven",
     "summary": "I craft reliable web apps with React, TypeScript, Node, and turn product and business questions into data‑backed decisions.",
     "bullets": [
       "Strong in React + TS, API integration, and clean UI/UX",
@@ -32,9 +32,29 @@
     "contact": "Contact"
   },
   "experiences": {
-    "role": "Full-Stack Developer",
-    "dates": "2022 — Present",
-    "description": "I'm the developer responsible for maintaining and keeping the company's ERP by developing new modules using React and fixing backend errors on their APIs."
+    "items": [
+      {
+        "role": "Full‑Stack Developer",
+        "company": "Estaq Ltda.",
+        "dates": "2022 — Present",
+        "bullets": [
+          "New lead developer of the company's ERP system, delivering new modules in React + TypeScript across every business area — from requirements to production",
+          "Design and maintain Node.js / Express REST APIs that drive daily operations across multiple departments",
+          "Build process automations for Engineering, Operations, HR, and Finance — eliminating high‑volume manual workflows",
+          "Own Power BI dashboards that give management real‑time visibility into costs, KPIs, and workforce data"
+        ]
+      },
+      {
+        "role": "Junior Developer",
+        "company": "Estaq Ltda.",
+        "dates": "2020 — 2022",
+        "bullets": [
+          "Customized and extended a legacy ERP system to fit evolving business requirements across multiple departments",
+          "Improved and maintained internal REST APIs, increasing reliability and reducing response errors",
+          "Diagnosed and resolved bugs across the full codebase, progressively taking ownership of increasingly complex issues"
+        ]
+      }
+    ]
   },
   "education": {
     "dsDegree": "Graduate Degree in Data Science",

@@ -80,6 +80,8 @@ export const ResumePDF: React.FC<Props> = ({ updated = "Nov 2025" }) => (
             "Express",
             "SQL",
             "Power BI",
+            "Google Cloud APIs",
+            "n8n",
             "Git",
             "REST APIs",
             "UI/UX",
@@ -95,15 +97,33 @@ export const ResumePDF: React.FC<Props> = ({ updated = "Nov 2025" }) => (
         <Text style={styles.sectionTitle}>Experience</Text>
         <View>
           <View style={styles.row}>
-            <Text>Software Developer — Estaq</Text>
-            <Text style={styles.small}>2021 – Present</Text>
+            <Text style={{ fontWeight: 700 }}>Full‑Stack Developer — Estaq Ltda.</Text>
+            <Text style={styles.small}>2022 – Present</Text>
           </View>
           <View style={{ marginTop: 4 }}>
             {[
-              "Modernized legacy ERP modules with React + TypeScript to improve clarity and reduce navigation friction for end users.",
-              "Integrated internal APIs to enable direct production data entry and updates with higher reliability.",
-              "Diagnosed and resolved backend issues impacting data integrity and availability.",
-              "Partnered with stakeholders to refine UI/UX and streamline workflows.",
+              "Lead developer of the company's ERP, delivering new modules in React + TypeScript across every business area.",
+              "Design and maintain Node.js / Express REST APIs that drive daily operations across multiple departments.",
+              "Build process automations (n8n, Google Cloud APIs) for Engineering, Operations, HR, and Finance.",
+              "Own Power BI dashboards giving management real-time visibility into costs, KPIs, and workforce data.",
+            ].map((b, i) => (
+              <View key={i} style={styles.bullet}>
+                <Text style={styles.bulletDot}>•</Text>
+                <Text style={styles.bulletText}>{b}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+        <View style={{ marginTop: 6 }}>
+          <View style={styles.row}>
+            <Text style={{ fontWeight: 700 }}>Junior Developer — Estaq Ltda.</Text>
+            <Text style={styles.small}>2020 – 2022</Text>
+          </View>
+          <View style={{ marginTop: 4 }}>
+            {[
+              "Customized and extended a legacy ERP system to fit evolving business requirements.",
+              "Improved and maintained internal REST APIs, increasing reliability and reducing response errors.",
+              "Diagnosed and resolved bugs across the full codebase, progressively owning more complex issues.",
             ].map((b, i) => (
               <View key={i} style={styles.bullet}>
                 <Text style={styles.bulletDot}>•</Text>

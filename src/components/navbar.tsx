@@ -15,9 +15,9 @@ const Navbar = () => {
                 <div className="hidden md:flex items-center gap-2">
                     <Link to="about" smooth={true} duration={500} className="p-4 text-lg hover:underline underline-offset-4 text-foreground">{t('navbar.about')}</Link>
                     <span className="p-4 text-muted-foreground">|</span>
-                    <Link to="projects" smooth={true} duration={500} className="p-4 text-lg hover:underline underline-offset-4 text-foreground">{t('navbar.caseStudies')}</Link>
+                    <Link to="experience" smooth={true} duration={500} className="p-4 text-lg hover:underline underline-offset-4 text-foreground">{t('sections.experiences')}</Link>
                     <span className="p-4 text-muted-foreground">|</span>
-                    <Link to="dashboards" smooth={true} duration={500} className="p-4 text-lg hover:underline underline-offset-4 text-foreground">{t('navbar.dashboards')}</Link>
+                    <Link to="projects" smooth={true} duration={500} className="p-4 text-lg hover:underline underline-offset-4 text-foreground">{t('navbar.caseStudies')}</Link>
                     <span className="p-4 text-muted-foreground">|</span>
                     <div className="relative">
                         <Button
@@ -89,7 +89,9 @@ const Navbar = () => {
                 <div className={(isOpen ? "" : "hidden ") + "md:hidden z-[80]"}>
                 <Link to="about" smooth={true} duration={500} className="block p-4 text-lg text-foreground">{t('navbar.about')}</Link>
                 <Separator className="bg-border/60" />
-                <Link to="projects" smooth={true} duration={500} className="block p-4 text-lg text-foreground">{t('navbar.projects')}</Link>
+                <Link to="experience" smooth={true} duration={500} className="block p-4 text-lg text-foreground">{t('sections.experiences')}</Link>
+                <Separator className="bg-border/60" />
+                <Link to="projects" smooth={true} duration={500} className="block p-4 text-lg text-foreground">{t('navbar.caseStudies')}</Link>
                 <Separator className="bg-border/60" />
                 <div className="px-4 py-2 z-1000">
                     <div className="border border-border/60 rounded bg-card/35 backdrop-blur-md">

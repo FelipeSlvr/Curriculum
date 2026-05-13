@@ -48,35 +48,26 @@ export const Projects = () => {
                 { src: asset("bis/2.png"), alt: "KPI Dashboard detail" },
             ],
         },
-        {
-            title: t('dashboards.items.workforce.title'),
-            description: t('dashboards.items.workforce.description'),
-            tags: ["Power BI", "DAX", "Workforce Analytics"],
-            images: [
-                { src: asset("bis/11.png"), alt: "Workforce Cost overview" },
-                { src: asset("bis/22.png"), alt: "Workforce Deviation Analysis" },
-            ],
-        },
     ];
 
     return (
-        <section id="projects" className="py-12 px-5 mx-4 md:mx-16 lg:mx-[100px] xl:mx-[120px] 2xl:mx-[200px]">
-            <p className="text-xs text-muted-foreground uppercase tracking-widest mb-8 text-center">{t('sections.caseStudies')}</p>
+        <section id="projects" className="mx-auto max-w-[1400px] px-2 py-12 lg:px-4">
+            <p className="mb-8 text-center text-xs uppercase tracking-[0.34em] text-muted-foreground">{t('sections.caseStudies')}</p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            <div className="grid grid-cols-1 gap-6 items-stretch lg:grid-cols-3">
                 {allProjects.map((p) => (
-                    <div key={p.title} className="terminal-panel box-border w-full p-5 gap-4 flex flex-col">
+                    <div key={p.title} className="terminal-panel box-border flex w-full flex-col gap-5 overflow-hidden p-5 md:p-6">
                         <div className="flex flex-col gap-2">
-                            <h2 className="text-xl font-bold text-foreground">{p.title}</h2>
+                            <h2 className="text-2xl font-semibold text-foreground">{p.title}</h2>
                             <div className="flex flex-wrap gap-2">
                                 {p.tags.map(tag => (
-                                    <span key={tag} className="text-xs px-2 py-0.5 border border-primary/30 rounded-sm bg-primary/5 text-foreground/90">
+                                    <span key={tag} className="rounded-full border border-white/55 bg-white/35 px-3 py-1 text-xs text-foreground/90 backdrop-blur-xl">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
                             <Separator className="bg-border/60" />
-                            <p className="text-sm leading-relaxed text-foreground/90">{p.description}</p>
+                            <p className="text-sm leading-7 text-foreground/84">{p.description}</p>
                         </div>
                         <div className="mt-auto">
                             <Carousel plugins={[Autoplay({ delay: 2500 })]}>
@@ -87,7 +78,7 @@ export const Projects = () => {
                                                 src={img.src}
                                                 alt={img.alt}
                                                 loading="lazy"
-                                                className="w-full h-full object-cover rounded"
+                                                className="aspect-[16/10] h-full w-full rounded-[24px] border border-white/40 object-cover"
                                             />
                                         </CarouselItem>
                                     ))}

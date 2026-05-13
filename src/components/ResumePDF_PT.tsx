@@ -69,7 +69,7 @@ export const ResumePDF_PT: React.FC<{ updated?: string }> = ({ updated = "Nov 20
         <Text style={styles.sectionTitle}>Experiência</Text>
         <View>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: 8 }}>
-            <Text style={{ fontWeight: 700 }}>Desenvolvedor Full‑Stack — Estaq Ltda.</Text>
+            <Text style={{ fontWeight: 700 }}>Desenvolvedor Analista — Estaq Ltda.</Text>
             <Text style={styles.small}>2022 – Presente</Text>
           </View>
           <View style={{ marginTop: 4 }}>

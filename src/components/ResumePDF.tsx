@@ -97,7 +97,7 @@ export const ResumePDF: React.FC<Props> = ({ updated = "Nov 2025" }) => (
         <Text style={styles.sectionTitle}>Experience</Text>
         <View>
           <View style={styles.row}>
-            <Text style={{ fontWeight: 700 }}>Full‑Stack Developer — Estaq Ltda.</Text>
+            <Text style={{ fontWeight: 700 }}>Analyst Developer — Estaq Ltda.</Text>
             <Text style={styles.small}>2022 – Present</Text>
           </View>
           <View style={{ marginTop: 4 }}>

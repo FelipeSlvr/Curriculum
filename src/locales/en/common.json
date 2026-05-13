@@ -4,9 +4,9 @@
     "caseStudies": "Case Studies",
     "projects": "Projects",
     "dashboards": "BI Dashboards",
-    "resume": "Resume",
-    "downloadEN": "Download (EN)",
-    "downloadPT": "Download (PT)",
+    "resume": "Hire me",
+    "downloadEN": "Download Resume(EN)",
+    "downloadPT": "Download Resume (PT)",
     "hireMe": "Hire me",
     "language": "Language",
     "english": "English",
@@ -14,12 +14,13 @@
   },
   "about": {
     "name": "Felipe Silveira",
-    "title": "Full‑Stack Developer • Data‑Driven",
-    "summary": "I craft reliable web apps with React, TypeScript, Node, and turn product and business questions into data‑backed decisions.",
+    "title": "Software Developer building polished web, mobile and data products",
+    "summary": "I design and ship reliable software with React, React Native, TypeScript and Node, translating product and business needs into fast, maintainable experiences.",
     "bullets": [
-      "Strong in React + TS, API integration, and clean UI/UX",
-      "Hands‑on with SQL and Power BI for insights and dashboards",
-      "Collaborative, pragmatic, and fast to learn new domains"
+      "Strong in React, TypeScript, API integration and intentional UI design",
+      "Build internal systems, dashboards and product flows with pragmatic architecture",
+      "Hands-on with SQL, Power BI and automation to support better decisions",
+      "Comfortable moving between frontend, backend, cloud delivery and collaboration"
     ],
     "ctaHire": "Hire me",
     "ctaResume": "View resume"
@@ -34,7 +35,7 @@
   "experiences": {
     "items": [
       {
-        "role": "Full‑Stack Developer",
+        "role": "Analyst Developer",
         "company": "Estaq Ltda.",
         "dates": "2022 — Present",
         "bullets": [

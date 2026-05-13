@@ -9,28 +9,27 @@ const Navbar = () => {
     const { t } = useTranslation();
 
     return (
-    <nav className="bg-background/35 backdrop-blur-md p-3 mx-auto top-0 border-b sticky border-border/60 z-50">
-            <div className="container mx-auto flex justify-between items-center">
-                <a className="text-3xl font-bold terminal-heading text-foreground">PORTFOLIO</a>
-                <div className="hidden md:flex items-center gap-2">
-                    <Link to="about" smooth={true} duration={500} className="p-4 text-lg hover:underline underline-offset-4 text-foreground">{t('navbar.about')}</Link>
-                    <span className="p-4 text-muted-foreground">|</span>
-                    <Link to="experience" smooth={true} duration={500} className="p-4 text-lg hover:underline underline-offset-4 text-foreground">{t('sections.experiences')}</Link>
-                    <span className="p-4 text-muted-foreground">|</span>
-                    <Link to="projects" smooth={true} duration={500} className="p-4 text-lg hover:underline underline-offset-4 text-foreground">{t('navbar.caseStudies')}</Link>
-                    <span className="p-4 text-muted-foreground">|</span>
+    <nav className="terminal-panel terminal-chrome sticky top-3 z-50 mx-auto max-w-[1400px] px-4 py-3">
+            <div className="flex items-center justify-between gap-4">
+                <div className="flex flex-col">
+                    <a className="text-[1.7rem] font-semibold terminal-heading text-foreground">Portfolio</a>
+                </div>
+                <div className="hidden md:flex items-center gap-2 rounded-full border border-white/45 bg-white/25 px-2 py-1 backdrop-blur-xl">
+                    <Link to="about" smooth={true} duration={500} className="rounded-full px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-white/45">{t('navbar.about')}</Link>
+                    <Link to="experience" smooth={true} duration={500} className="rounded-full px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-white/45">{t('sections.experiences')}</Link>
+                    <Link to="projects" smooth={true} duration={500} className="rounded-full px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-white/45">{t('navbar.caseStudies')}</Link>
                     <div className="relative">
                         <Button
-                          className="ml-2 bg-primary text-primary-foreground hover:bg-primary/90"
+                          className="ml-2 rounded-full border border-white/50 bg-white/80 px-5 text-primary shadow-sm hover:bg-white"
                           onClick={() => setIsOpen(prev => !prev)}
                           aria-haspopup="true"
                           aria-expanded={isOpen}
                         >
                             {t('navbar.resume')} ▾
                         </Button>
-                        <div className={(isOpen ? "" : "hidden ") + "absolute right-0 mt-2 bg-card/60 backdrop-blur-md border border-border/60 rounded shadow-lg min-w-[180px] z-[100]"}>
+                        <div className={(isOpen ? "" : "hidden ") + "absolute right-0 mt-2 min-w-[180px] rounded-3xl border border-white/45 bg-white/45 p-2 shadow-lg backdrop-blur-2xl z-[100]"}>
                             <button
-                                className="block w-full text-left px-4 py-2 text-foreground hover:bg-accent/40"
+                                className="block w-full rounded-2xl px-4 py-3 text-left text-foreground transition-colors hover:bg-white/55"
                                 onClick={async () => {
                                     const [{ pdf }, { default: ResumePDF }] = await Promise.all([
                                         import("@react-pdf/renderer"),
@@ -51,7 +50,7 @@ const Navbar = () => {
                             </button>
                             <Separator className="bg-border/60" />
                             <button
-                                className="block w-full text-left px-4 py-2 text-foreground hover:bg-accent/40"
+                                className="block w-full rounded-2xl px-4 py-3 text-left text-foreground transition-colors hover:bg-white/55"
                                 onClick={async () => {
                                     const [{ pdf }, { default: ResumePDF_PT }] = await Promise.all([
                                         import("@react-pdf/renderer"),
@@ -76,7 +75,7 @@ const Navbar = () => {
                 </div>
                 
                 <div className="md:hidden">
-                    <button onClick={() => setIsOpen(!isOpen)} className="border border-border/60 p-2 text-foreground">
+                    <button onClick={() => setIsOpen(!isOpen)} className="rounded-2xl border border-white/45 bg-white/35 p-2 text-foreground backdrop-blur-xl">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -86,15 +85,15 @@ const Navbar = () => {
                 </div>
                 
             </div>
-                <div className={(isOpen ? "" : "hidden ") + "md:hidden z-[80]"}>
-                <Link to="about" smooth={true} duration={500} className="block p-4 text-lg text-foreground">{t('navbar.about')}</Link>
+                <div className={(isOpen ? "" : "hidden ") + "md:hidden z-[80] pt-3"}>
+                <Link to="about" smooth={true} duration={500} className="block rounded-2xl px-4 py-3 text-base text-foreground">{t('navbar.about')}</Link>
                 <Separator className="bg-border/60" />
-                <Link to="experience" smooth={true} duration={500} className="block p-4 text-lg text-foreground">{t('sections.experiences')}</Link>
+                <Link to="experience" smooth={true} duration={500} className="block rounded-2xl px-4 py-3 text-base text-foreground">{t('sections.experiences')}</Link>
                 <Separator className="bg-border/60" />
-                <Link to="projects" smooth={true} duration={500} className="block p-4 text-lg text-foreground">{t('navbar.caseStudies')}</Link>
+                <Link to="projects" smooth={true} duration={500} className="block rounded-2xl px-4 py-3 text-base text-foreground">{t('navbar.caseStudies')}</Link>
                 <Separator className="bg-border/60" />
-                <div className="px-4 py-2 z-1000">
-                    <div className="border border-border/60 rounded bg-card/35 backdrop-blur-md">
+                <div className="px-1 py-2 z-1000">
+                    <div className="rounded-[28px] border border-white/45 bg-white/30 backdrop-blur-2xl">
                         <div className="flex items-center justify-between p-3">
                             <span className="text-lg text-foreground">{t('navbar.resume')}</span>
                         </div>

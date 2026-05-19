@@ -68,7 +68,7 @@
   "projects": {
     "items": {
       "sistaq": {
-        "description": "Modernized an ERP interface with React + TypeScript, improving usability, navigation, and data entry workflows. Delivered clean UI patterns, better form validation, and faster tables with filtering and sorting."
+        "description": "Modernized an ERP interface from PHP to React + TypeScript, improving usability, navigation, and data entry workflows. Delivered clean UI patterns, better form validation, and faster tables with filtering and sorting."
       },
       "cosmonaut": {
         "description": "Built an e‑commerce prototype with product catalog, cart flows, and webhook-based integrations. Focused on component reuse, accessibility, and a smooth browsing experience."

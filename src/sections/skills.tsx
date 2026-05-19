@@ -20,7 +20,7 @@ export const Skills = () => {
 
     return (
         <div className="terminal-panel p-6 flex flex-col gap-5">
-            <p className="text-xs text-muted-foreground uppercase tracking-[0.3em]">{t('sections.skills')}</p>
+            <p className="text-xs text-accent uppercase tracking-[0.3em]">{t('sections.skills')}</p>
             <div className="flex flex-col gap-4">
                 {categories.map((cat) => (
                     <div key={cat.label} className="flex flex-col gap-2">
@@ -29,7 +29,7 @@ export const Skills = () => {
                             {cat.items.map(item => (
                                 <span
                                     key={item}
-                                    className="whitespace-nowrap rounded-full border border-white/55 bg-white/35 px-3 py-1 text-sm text-foreground backdrop-blur-xl"
+                                    className="whitespace-nowrap border border-border bg-secondary px-3 py-1 text-sm text-foreground"
                                 >
                                     {item}
                                 </span>

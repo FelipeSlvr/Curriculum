@@ -52,7 +52,7 @@ export const Projects = () => {
 
     return (
         <section id="projects" className="mx-auto max-w-[1400px] px-2 py-12 lg:px-4">
-            <p className="mb-8 text-center text-xs uppercase tracking-[0.34em] text-muted-foreground">{t('sections.caseStudies')}</p>
+            <p className="mb-8 text-center text-xs uppercase tracking-[0.34em] text-accent">{t('sections.caseStudies')}</p>
 
             <div className="grid grid-cols-1 gap-6 items-stretch lg:grid-cols-3">
                 {allProjects.map((p) => (
@@ -61,12 +61,12 @@ export const Projects = () => {
                             <h2 className="text-2xl font-semibold text-foreground">{p.title}</h2>
                             <div className="flex flex-wrap gap-2">
                                 {p.tags.map(tag => (
-                                    <span key={tag} className="rounded-full border border-white/55 bg-white/35 px-3 py-1 text-xs text-foreground/90 backdrop-blur-xl">
+                                    <span key={tag} className="border border-border bg-secondary px-3 py-1 text-xs text-foreground/90">
                                         {tag}
                                     </span>
                                 ))}
                             </div>
-                            <Separator className="bg-border/60" />
+                            <Separator className="bg-border" />
                             <p className="text-sm leading-7 text-foreground/84">{p.description}</p>
                         </div>
                         <div className="mt-auto">
@@ -78,7 +78,7 @@ export const Projects = () => {
                                                 src={img.src}
                                                 alt={img.alt}
                                                 loading="lazy"
-                                                className="aspect-[16/10] h-full w-full rounded-[24px] border border-white/40 object-cover"
+                                                className="aspect-[16/10] h-full w-full border border-border object-cover"
                                             />
                                         </CarouselItem>
                                     ))}

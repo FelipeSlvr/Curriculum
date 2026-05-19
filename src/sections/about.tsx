@@ -9,7 +9,7 @@ export const About = () => {
             <div className="terminal-panel p-6 md:p-7 lg:p-8">
                 <div className="flex flex-col gap-5">
                     <div className="flex flex-col gap-3">
-                        <h1 className="text-5xl font-semibold text-foreground terminal-heading md:text-6xl">{t('about.name')}</h1>
+                        <h1 className="text-5xl font-semibold text-primary terminal-heading md:text-6xl">{t('about.name')}</h1>
                         <h2 className="text-xl font-semibold text-foreground/85 md:text-2xl">{t('about.title')}</h2>
                     </div>
                     <ul className="flex flex-col gap-2.5">

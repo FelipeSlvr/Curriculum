@@ -9,27 +9,27 @@ const Navbar = () => {
     const { t } = useTranslation();
 
     return (
-    <nav className="terminal-panel terminal-chrome sticky top-3 z-50 mx-auto max-w-[1400px] px-4 py-3">
+    <nav className="terminal-panel sticky top-3 z-50 mx-auto max-w-[1400px] px-4 py-3">
             <div className="flex items-center justify-between gap-4">
                 <div className="flex flex-col">
-                    <a className="text-[1.7rem] font-semibold terminal-heading text-foreground">Portfolio</a>
+                    <a className="text-[1.7rem] font-semibold terminal-heading text-primary">Portfolio</a>
                 </div>
-                <div className="hidden md:flex items-center gap-2 rounded-full border border-white/45 bg-white/25 px-2 py-1 backdrop-blur-xl">
-                    <Link to="about" smooth={true} duration={500} className="rounded-full px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-white/45">{t('navbar.about')}</Link>
-                    <Link to="experience" smooth={true} duration={500} className="rounded-full px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-white/45">{t('sections.experiences')}</Link>
-                    <Link to="projects" smooth={true} duration={500} className="rounded-full px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-white/45">{t('navbar.caseStudies')}</Link>
+                <div className="hidden md:flex items-center gap-2 border border-border bg-secondary px-2 py-1">
+                    <Link to="about" smooth={true} duration={500} className="px-4 py-2 text-sm font-medium text-foreground transition-colors hover:text-primary cursor-pointer">{t('navbar.about')}</Link>
+                    <Link to="experience" smooth={true} duration={500} className="px-4 py-2 text-sm font-medium text-foreground transition-colors hover:text-primary cursor-pointer">{t('sections.experiences')}</Link>
+                    <Link to="projects" smooth={true} duration={500} className="px-4 py-2 text-sm font-medium text-foreground transition-colors hover:text-primary cursor-pointer">{t('navbar.caseStudies')}</Link>
                     <div className="relative">
                         <Button
-                          className="ml-2 rounded-full border border-white/50 bg-white/80 px-5 text-primary shadow-sm hover:bg-white"
+                          className="ml-2 border border-primary bg-transparent text-primary shadow-none hover:bg-primary hover:text-background"
                           onClick={() => setIsOpen(prev => !prev)}
                           aria-haspopup="true"
                           aria-expanded={isOpen}
                         >
                             {t('navbar.resume')} ▾
                         </Button>
-                        <div className={(isOpen ? "" : "hidden ") + "absolute right-0 mt-2 min-w-[180px] rounded-3xl border border-white/45 bg-white/45 p-2 shadow-lg backdrop-blur-2xl z-[100]"}>
+                        <div className={(isOpen ? "" : "hidden ") + "absolute right-0 mt-2 min-w-[180px] border border-border bg-card p-2 z-[100]"}>
                             <button
-                                className="block w-full rounded-2xl px-4 py-3 text-left text-foreground transition-colors hover:bg-white/55"
+                                className="block w-full px-4 py-3 text-left text-foreground transition-colors hover:text-primary"
                                 onClick={async () => {
                                     const [{ pdf }, { default: ResumePDF }] = await Promise.all([
                                         import("@react-pdf/renderer"),
@@ -48,9 +48,9 @@ const Navbar = () => {
                             >
                                 {t('navbar.downloadEN')}
                             </button>
-                            <Separator className="bg-border/60" />
+                            <Separator className="bg-border" />
                             <button
-                                className="block w-full rounded-2xl px-4 py-3 text-left text-foreground transition-colors hover:bg-white/55"
+                                className="block w-full px-4 py-3 text-left text-foreground transition-colors hover:text-primary"
                                 onClick={async () => {
                                     const [{ pdf }, { default: ResumePDF_PT }] = await Promise.all([
                                         import("@react-pdf/renderer"),
@@ -73,9 +73,9 @@ const Navbar = () => {
                     </div>
 
                 </div>
-                
+
                 <div className="md:hidden">
-                    <button onClick={() => setIsOpen(!isOpen)} className="rounded-2xl border border-white/45 bg-white/35 p-2 text-foreground backdrop-blur-xl">
+                    <button onClick={() => setIsOpen(!isOpen)} className="border border-border bg-secondary p-2 text-foreground">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -83,21 +83,21 @@ const Navbar = () => {
                         </svg>
                     </button>
                 </div>
-                
+
             </div>
                 <div className={(isOpen ? "" : "hidden ") + "md:hidden z-[80] pt-3"}>
-                <Link to="about" smooth={true} duration={500} className="block rounded-2xl px-4 py-3 text-base text-foreground">{t('navbar.about')}</Link>
-                <Separator className="bg-border/60" />
-                <Link to="experience" smooth={true} duration={500} className="block rounded-2xl px-4 py-3 text-base text-foreground">{t('sections.experiences')}</Link>
-                <Separator className="bg-border/60" />
-                <Link to="projects" smooth={true} duration={500} className="block rounded-2xl px-4 py-3 text-base text-foreground">{t('navbar.caseStudies')}</Link>
-                <Separator className="bg-border/60" />
+                <Link to="about" smooth={true} duration={500} className="block px-4 py-3 text-base text-foreground hover:text-primary cursor-pointer">{t('navbar.about')}</Link>
+                <Separator className="bg-border" />
+                <Link to="experience" smooth={true} duration={500} className="block px-4 py-3 text-base text-foreground hover:text-primary cursor-pointer">{t('sections.experiences')}</Link>
+                <Separator className="bg-border" />
+                <Link to="projects" smooth={true} duration={500} className="block px-4 py-3 text-base text-foreground hover:text-primary cursor-pointer">{t('navbar.caseStudies')}</Link>
+                <Separator className="bg-border" />
                 <div className="px-1 py-2 z-1000">
-                    <div className="rounded-[28px] border border-white/45 bg-white/30 backdrop-blur-2xl">
+                    <div className="border border-border bg-secondary">
                         <div className="flex items-center justify-between p-3">
                             <span className="text-lg text-foreground">{t('navbar.resume')}</span>
                         </div>
-                        <Separator className="bg-border/60" />
+                        <Separator className="bg-border" />
                         <button
                             onClick={async () => {
                                 const [{ pdf }, { default: ResumePDF }] = await Promise.all([
@@ -115,11 +115,11 @@ const Navbar = () => {
                                 URL.revokeObjectURL(url);
                                 setIsOpen(false);
                             }}
-                            className="block w-full text-left px-4 py-2 text-foreground hover:bg-accent/40"
+                            className="block w-full text-left px-4 py-2 text-foreground hover:text-primary"
                         >
                             {t('navbar.downloadEN')}
                         </button>
-                        <Separator className="bg-border/60" />
+                        <Separator className="bg-border" />
                         <button
                             onClick={async () => {
                                 const [{ pdf }, { default: ResumePDF_PT }] = await Promise.all([
@@ -137,7 +137,7 @@ const Navbar = () => {
                                 URL.revokeObjectURL(url);
                                 setIsOpen(false);
                             }}
-                            className="block w-full text-left px-4 py-2 text-foreground hover:bg-accent/40"
+                            className="block w-full text-left px-4 py-2 text-foreground hover:text-primary"
                         >
                             {t('navbar.downloadPT')}
                         </button>
